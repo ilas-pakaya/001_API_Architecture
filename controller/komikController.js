@@ -1,0 +1,1 @@
+const db = reuquire('../models');
