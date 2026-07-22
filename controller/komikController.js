@@ -42,4 +42,13 @@ async function updateKomik(req, res) {
         const komik = await db.komik.findByPk(id);
         if (!komik) {
             return res.status(404).json({ error: 'Komik not found' });
-     
+        }
+        komik.title = title;
+        komik.description = description;
+        komik.author = author;
+        await komik.save();
+    } catch (err) {
+        console.error('Error updating komik:', err.message);
+        res.status(500).json({ error: 'Failed to update komik' });
+    }
+}
