@@ -34,3 +34,5 @@ async function crateKomik(req, res) {
         res.status(500).json({ error: 'Failed to create komik' });
     }
 }
+
+async function updateKomik(req, res) {
