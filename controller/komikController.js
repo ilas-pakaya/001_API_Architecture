@@ -22,3 +22,6 @@ async function getKomikById(req, res) {
         console.error('Error fetching komik by ID:', err.message);
         res.status(500).json({ error: 'Failed to fetch komik by ID' });
     }
+}
+
+async function crateKomik(req, res) {
