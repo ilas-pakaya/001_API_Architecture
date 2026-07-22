@@ -25,3 +25,7 @@ async function getKomikById(req, res) {
 }
 
 async function crateKomik(req, res) {
+    const { title, description, author } = req.body;
+    try {
+        const newKomik = await db.komik.create({ title, description, author });
+    }
