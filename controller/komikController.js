@@ -52,3 +52,5 @@ async function updateKomik(req, res) {
         res.status(500).json({ error: 'Failed to update komik' });
     }
 }
+
+async function deleteKomik(req, res) {
