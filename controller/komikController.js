@@ -9,3 +9,6 @@ async function getAllKomik(req, res) {
         res.status(500).json({ error: 'Failed to fetch komik' });
     }
 }
+
+async function getKomikById(req, res) {
+    const { id } = req.params;
