@@ -36,3 +36,10 @@ async function crateKomik(req, res) {
 }
 
 async function updateKomik(req, res) {
+    const { id } = req.params;
+    const { title, description, author } = req.body;
+    try {
+        const komik = await db.komik.findByPk(id);
+        if (!komik) {
+            return res.status(404).json({ error: 'Komik not found' });
+     
