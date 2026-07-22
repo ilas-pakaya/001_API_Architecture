@@ -28,4 +28,9 @@ async function crateKomik(req, res) {
     const { title, description, author } = req.body;
     try {
         const newKomik = await db.komik.create({ title, description, author });
+        res.status(201).json(newKomik);
+    } catch (err) {
+        console.error('Error creating komik:', err.message);
+        res.status(500).json({ error: 'Failed to create komik' });
     }
+}
